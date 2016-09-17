@@ -5,6 +5,12 @@
  */
 package proyecto2_orga;
 
+import java.awt.BorderLayout;
+import java.awt.Rectangle;
+import javax.swing.JInternalFrame;
+import javax.swing.JLayeredPane;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Sammy
@@ -27,21 +33,167 @@ public class proyecto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jd_BTree = new javax.swing.JDialog();
+        jd_BplusTree = new javax.swing.JDialog();
+        jd_AVLTree = new javax.swing.JDialog();
+        jLabel3 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
+        jInternalFrame2 = new javax.swing.JInternalFrame();
+        jLabel2 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jd_BTreeLayout = new javax.swing.GroupLayout(jd_BTree.getContentPane());
+        jd_BTree.getContentPane().setLayout(jd_BTreeLayout);
+        jd_BTreeLayout.setHorizontalGroup(
+            jd_BTreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 400, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jd_BTreeLayout.setVerticalGroup(
+            jd_BTreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
+        javax.swing.GroupLayout jd_BplusTreeLayout = new javax.swing.GroupLayout(jd_BplusTree.getContentPane());
+        jd_BplusTree.getContentPane().setLayout(jd_BplusTreeLayout);
+        jd_BplusTreeLayout.setHorizontalGroup(
+            jd_BplusTreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jd_BplusTreeLayout.setVerticalGroup(
+            jd_BplusTreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        jd_AVLTree.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto2_orga/Images/7.png"))); // NOI18N
+        jd_AVLTree.getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, 130, 70));
+
+        jButton1.setText("Borrar");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+        jd_AVLTree.getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 350, -1, -1));
+
+        jButton3.setText("Insertar");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+        jd_AVLTree.getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto2_orga/Images/oceanBackground.png"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        jd_AVLTree.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 320, 180));
+
+        jInternalFrame2.setResizable(true);
+        jInternalFrame2.setEnabled(false);
+        jInternalFrame2.setFocusCycleRoot(false);
+        jInternalFrame2.setVisible(true);
+
+        javax.swing.GroupLayout jInternalFrame2Layout = new javax.swing.GroupLayout(jInternalFrame2.getContentPane());
+        jInternalFrame2.getContentPane().setLayout(jInternalFrame2Layout);
+        jInternalFrame2Layout.setHorizontalGroup(
+            jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 484, Short.MAX_VALUE)
+        );
+        jInternalFrame2Layout.setVerticalGroup(
+            jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 440, Short.MAX_VALUE)
+        );
+
+        jDesktopPane1.add(jInternalFrame2);
+        jInternalFrame2.setBounds(0, 0, 500, 470);
+
+        jd_AVLTree.getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 500, 470));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto2_orga/Images/AVLBackground.jpg"))); // NOI18N
+        jd_AVLTree.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-120, -20, 600, -1));
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton2.setBackground(new java.awt.Color(255, 255, 255));
+        jButton2.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 0, 0));
+        jButton2.setText("B+Tree");
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 100, -1));
+
+        jButton4.setBackground(new java.awt.Color(255, 255, 255));
+        jButton4.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 18)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 0, 0));
+        jButton4.setText("AVLTree");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, -1, -1));
+
+        jButton5.setBackground(new java.awt.Color(255, 255, 255));
+        jButton5.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 18)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 0, 0));
+        jButton5.setText("BTree");
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 100, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto2_orga/Images/mainBackground.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 929, 247));
+
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // Evento para agregar un nuevo key al arbol para dibujar
+        String key = JOptionPane.showInputDialog(null, "Ingrese nueva llave");
+        if (key.matches("[0-9]*")) {
+            this.ArbolAVL.root = this.ArbolAVL.insert(this.ArbolAVL.root, Integer.parseInt(key));
+        }
+        //DibujarArbol DA = new DibujarArbol(ArbolAVL);
+        //
+        this.jDesktopPane1.removeAll();
+        Rectangle tamaño = this.jInternalFrame2.getBounds();
+        this.jInternalFrame2 = null;
+        this.jInternalFrame2 = new JInternalFrame("Representación gráfica", true);
+        this.jDesktopPane1.add(this.jInternalFrame2, JLayeredPane.DEFAULT_LAYER);
+        this.jInternalFrame2.setVisible(true);
+        this.jInternalFrame2.setBounds(tamaño);
+        this.jInternalFrame2.setEnabled(false);
+        this.jInternalFrame2.add(new DibujarArbol(ArbolAVL), BorderLayout.CENTER);
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        // evento para levantar la ventana de dialogo del arbol avl
+        this.jd_AVLTree.pack();
+        this.jd_AVLTree.setLocationRelativeTo(null);
+        this.jd_AVLTree.setVisible(true);
+    }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // Evento para borrar un nodo del AVLTree
+        String Nodo_borrar = JOptionPane.showInputDialog(null, "Cual nodo desea borrar");
+        if (Nodo_borrar.matches("[0-9]*")) {
+            this.ArbolAVL.root = this.ArbolAVL.deleteNode(this.ArbolAVL.root, Integer.parseInt(Nodo_borrar));
+        }this.jDesktopPane1.removeAll();
+        Rectangle tamaño = this.jInternalFrame2.getBounds();
+        this.jInternalFrame2 = null;
+        this.jInternalFrame2 = new JInternalFrame("Representación gráfica", true);
+        this.jDesktopPane1.add(this.jInternalFrame2, JLayeredPane.DEFAULT_LAYER);
+        this.jInternalFrame2.setVisible(true);
+        this.jInternalFrame2.setBounds(tamaño);
+        this.jInternalFrame2.setEnabled(false);
+        this.jInternalFrame2.add(new DibujarArbol(ArbolAVL), BorderLayout.CENTER);
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -79,5 +231,20 @@ public class proyecto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JInternalFrame jInternalFrame2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JDialog jd_AVLTree;
+    private javax.swing.JDialog jd_BTree;
+    private javax.swing.JDialog jd_BplusTree;
     // End of variables declaration//GEN-END:variables
+AVLTree ArbolAVL = new AVLTree();
 }

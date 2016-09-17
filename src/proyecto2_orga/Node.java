@@ -4,18 +4,17 @@
  * and open the template in the editor.
  */
 package proyecto2_orga;
-
 /**
  *
  * @author Sammy
  */
-public class main {
+public class Node {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    int key, height;
+    Node left, right;
+
+    Node(int d) {
+        key = d;
+        height = 1;
     }
-    
 }
