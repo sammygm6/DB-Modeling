@@ -33,8 +33,14 @@ public class proyecto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jd_BMASTree = new javax.swing.JDialog();
         jd_BTree = new javax.swing.JDialog();
-        jd_BplusTree = new javax.swing.JDialog();
+        jDesktopPane2 = new javax.swing.JDesktopPane();
+        jInternalFrame3 = new javax.swing.JInternalFrame();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
         jd_AVLTree = new javax.swing.JDialog();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -48,28 +54,54 @@ public class proyecto extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout jd_BTreeLayout = new javax.swing.GroupLayout(jd_BTree.getContentPane());
-        jd_BTree.getContentPane().setLayout(jd_BTreeLayout);
-        jd_BTreeLayout.setHorizontalGroup(
-            jd_BTreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jd_BMASTreeLayout = new javax.swing.GroupLayout(jd_BMASTree.getContentPane());
+        jd_BMASTree.getContentPane().setLayout(jd_BMASTreeLayout);
+        jd_BMASTreeLayout.setHorizontalGroup(
+            jd_BMASTreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 400, Short.MAX_VALUE)
         );
-        jd_BTreeLayout.setVerticalGroup(
-            jd_BTreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jd_BMASTreeLayout.setVerticalGroup(
+            jd_BMASTreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout jd_BplusTreeLayout = new javax.swing.GroupLayout(jd_BplusTree.getContentPane());
-        jd_BplusTree.getContentPane().setLayout(jd_BplusTreeLayout);
-        jd_BplusTreeLayout.setHorizontalGroup(
-            jd_BplusTreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        jd_BTree.setTitle("BTree");
+        jd_BTree.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jInternalFrame3.setResizable(true);
+        jInternalFrame3.setEnabled(false);
+        jInternalFrame3.setFocusCycleRoot(false);
+        jInternalFrame3.setVisible(true);
+
+        javax.swing.GroupLayout jInternalFrame3Layout = new javax.swing.GroupLayout(jInternalFrame3.getContentPane());
+        jInternalFrame3.getContentPane().setLayout(jInternalFrame3Layout);
+        jInternalFrame3Layout.setHorizontalGroup(
+            jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 484, Short.MAX_VALUE)
         );
-        jd_BplusTreeLayout.setVerticalGroup(
-            jd_BplusTreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        jInternalFrame3Layout.setVerticalGroup(
+            jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 470, Short.MAX_VALUE)
         );
 
+        jDesktopPane2.add(jInternalFrame3);
+        jInternalFrame3.setBounds(0, 0, 500, 500);
+
+        jd_BTree.getContentPane().add(jDesktopPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, 500, 500));
+
+        jButton6.setText("Delete");
+        jd_BTree.getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, -1, -1));
+
+        jButton7.setText("Modificar");
+        jd_BTree.getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, -1, -1));
+
+        jButton8.setText("Insert");
+        jd_BTree.getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, -1, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto2_orga/Images/pentagramaBtree.jpg"))); // NOI18N
+        jd_BTree.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 550, 520));
+
+        jd_AVLTree.setTitle("AVLTree");
         jd_AVLTree.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto2_orga/Images/7.png"))); // NOI18N
@@ -236,15 +268,21 @@ public class proyecto extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JDesktopPane jDesktopPane2;
     private javax.swing.JInternalFrame jInternalFrame2;
+    private javax.swing.JInternalFrame jInternalFrame3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JDialog jd_AVLTree;
+    private javax.swing.JDialog jd_BMASTree;
     private javax.swing.JDialog jd_BTree;
-    private javax.swing.JDialog jd_BplusTree;
     // End of variables declaration//GEN-END:variables
 AVLTree ArbolAVL = new AVLTree();
 }
