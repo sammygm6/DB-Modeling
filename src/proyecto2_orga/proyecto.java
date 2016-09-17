@@ -22,6 +22,7 @@ public class proyecto extends javax.swing.JFrame {
      */
     public proyecto() {
         initComponents();
+        this.jl_devil.setVisible(false);
     }
 
     /**
@@ -40,6 +41,8 @@ public class proyecto extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jl_devil = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jd_AVLTree = new javax.swing.JDialog();
         jLabel3 = new javax.swing.JLabel();
@@ -90,13 +93,24 @@ public class proyecto extends javax.swing.JFrame {
         jd_BTree.getContentPane().add(jDesktopPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, 500, 500));
 
         jButton6.setText("Delete");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
         jd_BTree.getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, -1, -1));
 
-        jButton7.setText("Modificar");
+        jButton7.setText("Mod");
         jd_BTree.getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, -1, -1));
 
         jButton8.setText("Insert");
         jd_BTree.getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, -1, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto2_orga/Images/8.png"))); // NOI18N
+        jd_BTree.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 420, 100, 70));
+
+        jl_devil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto2_orga/Images/devil.png"))); // NOI18N
+        jd_BTree.getContentPane().add(jl_devil, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 250, 260));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto2_orga/Images/pentagramaBtree.jpg"))); // NOI18N
         jd_BTree.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 550, 520));
@@ -175,6 +189,11 @@ public class proyecto extends javax.swing.JFrame {
         jButton5.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 18)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 0, 0));
         jButton5.setText("BTree");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 100, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto2_orga/Images/mainBackground.jpg"))); // NOI18N
@@ -226,6 +245,26 @@ public class proyecto extends javax.swing.JFrame {
         this.jInternalFrame2.setEnabled(false);
         this.jInternalFrame2.add(new DibujarArbol(ArbolAVL), BorderLayout.CENTER);
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // Evento para levantar el dialogo para el arbol B
+        this.jd_BTree.pack();
+        this.jd_BTree.setLocationRelativeTo(null);
+        this.jd_BTree.setVisible(true);
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        // Evento para borrar de un arbol B
+        try {
+            while(true){
+            this.jl_devil.setVisible(true);
+            this.wait(45);
+            this.jl_devil.setVisible(false);
+        }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jButton6MouseClicked
 
     /**
      * @param args the command line arguments
@@ -280,9 +319,11 @@ public class proyecto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JDialog jd_AVLTree;
     private javax.swing.JDialog jd_BMASTree;
     private javax.swing.JDialog jd_BTree;
+    private javax.swing.JLabel jl_devil;
     // End of variables declaration//GEN-END:variables
 AVLTree ArbolAVL = new AVLTree();
 }
