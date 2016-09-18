@@ -23,6 +23,7 @@ public class proyecto extends javax.swing.JFrame {
     public proyecto() {
         initComponents();
         this.jl_devil.setVisible(false);
+        this.jl_pentagram.setVisible(false);
     }
 
     /**
@@ -43,7 +44,9 @@ public class proyecto extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jl_devil = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jl_pentagram = new javax.swing.JLabel();
         jd_AVLTree = new javax.swing.JDialog();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -104,6 +107,11 @@ public class proyecto extends javax.swing.JFrame {
         jd_BTree.getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, -1, -1));
 
         jButton8.setText("Insert");
+        jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton8MouseClicked(evt);
+            }
+        });
         jd_BTree.getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto2_orga/Images/8.png"))); // NOI18N
@@ -112,8 +120,24 @@ public class proyecto extends javax.swing.JFrame {
         jl_devil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto2_orga/Images/devil.png"))); // NOI18N
         jd_BTree.getContentPane().add(jl_devil, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 250, 260));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto2_orga/Images/pentagramaBtree.jpg"))); // NOI18N
-        jd_BTree.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 550, 520));
+        jButton9.setText("?");
+        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton9MouseClicked(evt);
+            }
+        });
+        jd_BTree.getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jButton10.setText("Print");
+        jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton10MouseClicked(evt);
+            }
+        });
+        jd_BTree.getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+
+        jl_pentagram.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto2_orga/Images/pentagramaBtree.jpg"))); // NOI18N
+        jd_BTree.getContentPane().add(jl_pentagram, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 550, 520));
 
         jd_AVLTree.setTitle("AVLTree");
         jd_AVLTree.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -255,16 +279,39 @@ public class proyecto extends javax.swing.JFrame {
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
         // Evento para borrar de un arbol B
-        try {
-            while(true){
-            this.jl_devil.setVisible(true);
-            this.wait(45);
-            this.jl_devil.setVisible(false);
-        }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        
     }//GEN-LAST:event_jButton6MouseClicked
+
+    private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
+        // Evento para levantar el pentagrama con las virgenes si nos deja viktor
+        String pentagram = JOptionPane.showInputDialog(null, "Nos da permiso Viktor?").toLowerCase();
+        if (pentagram.equals("si") || pentagram.equals("s")) {
+            this.jl_pentagram.setVisible(true);
+        }
+    }//GEN-LAST:event_jButton9MouseClicked
+
+    private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
+        //Evento para insertar un nuevo nodo en el arbol b
+        String key = JOptionPane.showInputDialog(null, "Ingrese llave");
+        if (key.matches("[0-9]*")) {
+            if (this.ArbolB.isEmpty()) {
+                this.ArbolB = new BTree(Integer.parseInt(key));
+                System.out.println("Empty igual a true");
+            }else{
+                this.ArbolB.insert(Integer.parseInt(key));
+                System.out.println("Empty igual a false");
+            }
+        }
+    }//GEN-LAST:event_jButton8MouseClicked
+
+    private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
+        //Evento temporal para imprimir el arbol b
+        if (!this.ArbolB.isEmpty()) {
+            this.ArbolB.print();
+            System.out.println("----------------------------------");
+            this.ArbolB.printNodes();
+        }
+    }//GEN-LAST:event_jButton10MouseClicked
 
     /**
      * @param args the command line arguments
@@ -303,6 +350,7 @@ public class proyecto extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -310,6 +358,7 @@ public class proyecto extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JDesktopPane jDesktopPane2;
     private javax.swing.JInternalFrame jInternalFrame2;
@@ -318,12 +367,13 @@ public class proyecto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JDialog jd_AVLTree;
     private javax.swing.JDialog jd_BMASTree;
     private javax.swing.JDialog jd_BTree;
     private javax.swing.JLabel jl_devil;
+    private javax.swing.JLabel jl_pentagram;
     // End of variables declaration//GEN-END:variables
 AVLTree ArbolAVL = new AVLTree();
+BTree ArbolB = new BTree();
 }
