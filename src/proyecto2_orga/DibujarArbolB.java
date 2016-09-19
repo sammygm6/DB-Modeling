@@ -74,7 +74,7 @@ public class DibujarArbolB extends JPanel {
             }
         }
 
-        int h = fm.getHeight() + parent2child + Math.max(ld.height, rd.height);j
+        int h = fm.getHeight() + parent2child + Math.max(ld.height, rd.height);
         int w = ld.width + child2child + rd.width;
 
         Dimension d = new Dimension(w, h);
