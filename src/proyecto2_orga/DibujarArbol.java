@@ -98,8 +98,7 @@ public class DibujarArbol extends JPanel {
      
    }
     
-   public void paint(Graphics g) 
-   {
+   public void paint(Graphics g) {
          super.paint(g);
          fm = g.getFontMetrics();
 

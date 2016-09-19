@@ -7,7 +7,7 @@ package proyecto2_orga;
 
 public class BTree {
 
-    private BTreeNode root;
+    public BTreeNode root;
     private int T; //2T es el numero maximo de hijos que un nodo puede tener
     private int height;
     private boolean isEmpty = false;

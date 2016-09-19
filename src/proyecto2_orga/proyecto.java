@@ -234,8 +234,6 @@ public class proyecto extends javax.swing.JFrame {
         if (key.matches("[0-9]*")) {
             this.ArbolAVL.root = this.ArbolAVL.insert(this.ArbolAVL.root, Integer.parseInt(key));
         }
-        //DibujarArbol DA = new DibujarArbol(ArbolAVL);
-        //
         this.jDesktopPane1.removeAll();
         Rectangle tamaño = this.jInternalFrame2.getBounds();
         this.jInternalFrame2 = null;
@@ -292,16 +290,23 @@ public class proyecto extends javax.swing.JFrame {
 
     private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
         //Evento para insertar un nuevo nodo en el arbol b
-        String key = JOptionPane.showInputDialog(null, "Ingrese llave");
+        String key = JOptionPane.showInputDialog(null, "Ingrese nueva llave");
         if (key.matches("[0-9]*")) {
             if (this.ArbolB.isEmpty()) {
                 this.ArbolB = new BTree(Integer.parseInt(key));
-                System.out.println("Empty igual a true");
             }else{
                 this.ArbolB.insert(Integer.parseInt(key));
-                System.out.println("Empty igual a false");
             }
         }
+        this.jDesktopPane2.removeAll();
+        Rectangle tamaño = this.jInternalFrame3.getBounds();
+        this.jInternalFrame3 = null;
+        this.jInternalFrame3 = new JInternalFrame("Representación gráfica", true);
+        this.jDesktopPane2.add(this.jInternalFrame3, JLayeredPane.DEFAULT_LAYER);
+        this.jInternalFrame3.setVisible(true);
+        this.jInternalFrame3.setBounds(tamaño);
+        this.jInternalFrame3.setEnabled(false);
+        this.jInternalFrame3.add(new DibujarArbolB(this.ArbolB), BorderLayout.CENTER);
     }//GEN-LAST:event_jButton8MouseClicked
 
     private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
