@@ -52,6 +52,7 @@ public class DibujarArbolB extends JPanel {
         if (n == null) {
             return new Dimension(0, 0);
         }
+        
         Dimension ld = calcularTamanoSubarbol(n.c[0]);
         Dimension rd = calcularTamanoSubarbol(n.c[n.c.length - 1]);
 
@@ -86,7 +87,7 @@ public class DibujarArbolB extends JPanel {
         } else if (left != Integer.MAX_VALUE) {
             center = left + ld.width + child2child / 2;
         }
-        int width = fm.stringWidth(Integer.toString(n.key.length));
+        int width = fm.stringWidth(Integer.toString(n.c.length));
 
         posicionNodos.put(n, new Rectangle(center - width / 2 - 3, top, width + 6, fm.getHeight()));
 
