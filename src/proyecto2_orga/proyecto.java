@@ -35,7 +35,6 @@ public class proyecto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jd_BMASTree = new javax.swing.JDialog();
         jd_BTree = new javax.swing.JDialog();
         jDesktopPane2 = new javax.swing.JDesktopPane();
         jInternalFrame3 = new javax.swing.JInternalFrame();
@@ -55,21 +54,9 @@ public class proyecto extends javax.swing.JFrame {
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jInternalFrame2 = new javax.swing.JInternalFrame();
         jLabel2 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-
-        javax.swing.GroupLayout jd_BMASTreeLayout = new javax.swing.GroupLayout(jd_BMASTree.getContentPane());
-        jd_BMASTree.getContentPane().setLayout(jd_BMASTreeLayout);
-        jd_BMASTreeLayout.setHorizontalGroup(
-            jd_BMASTreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jd_BMASTreeLayout.setVerticalGroup(
-            jd_BMASTreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
 
         jd_BTree.setTitle("BTree");
         jd_BTree.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -192,12 +179,6 @@ public class proyecto extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 0, 0));
-        jButton2.setText("B+Tree");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 100, -1));
-
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 0, 0));
@@ -207,7 +188,7 @@ public class proyecto extends javax.swing.JFrame {
                 jButton4MouseClicked(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, -1, -1));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, -1, -1));
 
         jButton5.setBackground(new java.awt.Color(255, 255, 255));
         jButton5.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 18)); // NOI18N
@@ -218,7 +199,7 @@ public class proyecto extends javax.swing.JFrame {
                 jButton5MouseClicked(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 100, -1));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 100, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto2_orga/Images/mainBackground.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -356,7 +337,6 @@ public class proyecto extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -374,7 +354,6 @@ public class proyecto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JDialog jd_AVLTree;
-    private javax.swing.JDialog jd_BMASTree;
     private javax.swing.JDialog jd_BTree;
     private javax.swing.JLabel jl_devil;
     private javax.swing.JLabel jl_pentagram;

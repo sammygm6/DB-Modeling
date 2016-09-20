@@ -52,7 +52,7 @@ public class DibujarArbolB extends JPanel {
         if (n == null) {
             return new Dimension(0, 0);
         }
-        
+
         Dimension ld = calcularTamanoSubarbol(n.c[0]);
         Dimension rd = calcularTamanoSubarbol(n.c[n.c.length - 1]);
 
@@ -91,70 +91,12 @@ public class DibujarArbolB extends JPanel {
 
         posicionNodos.put(n, new Rectangle(center - width / 2 - 3, top, width + 6, fm.getHeight()));
 
-        if (n.isLeaf) {
-            for (int i = 0; i < n.c.length; i++) {
-                if (i == 0) {
-                    calcularPosicion(n.c[i], Integer.MAX_VALUE, center - child2child / 2, top + fm.getHeight() + parent2child);
-                }
-                if (i == n.n - 1) {
-                    calcularPosicion(n.c[i], center + child2child / 2, Integer.MAX_VALUE, top + fm.getHeight() + parent2child);
-                }
-            }
-        } else {
-            for (int i = 0; i < n.c.length; i++) {
-                //c[i].print();
-                if (i == 0) {
-                    ld = calcularTamañoSubarbol(n.c[i]);
-                }
-                if (i == n.n - 1) {
-                    rd = calcularTamañoSubarbol(n.c[i]);
-                }
-            }
-        }
-        
-        
         calcularPosicion(n.c[0], Integer.MAX_VALUE, center - child2child / 2, top + fm.getHeight() + parent2child);
         calcularPosicion(n.c[n.c.length - 1], center + child2child / 2, Integer.MAX_VALUE, top + fm.getHeight() + parent2child);
 
     }
 
     private void dibujarArbol(Graphics2D g, BTreeNode n, int puntox, int puntoy, int yoffs) {
-    
-     if (n == null){
-         return;
-     }
-     Rectangle r = (Rectangle) posicionNodos.get(n);
-     g.draw(r);
-     //g.drawString(Integer.toString(n.key), r.x + 3, r.y + yoffs);
-     int space = 0;
-        for (int i = 0; i < n.n; i++) {
-            g.drawString(Integer.toString(n.key[i]), r.x + 3 /*+ space*/, r.y + yoffs);
-            //space++;
-        }
-   
-     if (puntox != Integer.MAX_VALUE)
-       
-     g.drawLine(puntox, puntoy, (int)(r.x + r.width/2), r.y);
-     
-     if (n.isLeaf) {
-            for (int i = 0; i < n.c.length; i++) {
-                if (i == 0) {
-                    dibujarArbol(g, n.c[i], (int)(r.x + r.width/2), r.y + r.height, yoffs);
-                }
-                if (i == n.n - 1) {
-                    dibujarArbol(g, n.c[i], (int)(r.x + r.width/2), r.y + r.height, yoffs);
-                }
-            }
-        } else {
-            for (int i = 0; i < n.c.length; i++) {
-                if (i == 0) {
-                    dibujarArbol(g, n.c[i], (int)(r.x + r.width/2), r.y + r.height, yoffs);
-                }
-                if (i == n.n - 1) {
-                    dibujarArbol(g, n.c[i], (int)(r.x + r.width/2), r.y + r.height, yoffs);
-                }
-            }
-=======
 
         if (n == null) {
             return;
@@ -163,4 +105,37 @@ public class DibujarArbolB extends JPanel {
         g.draw(r);
         String salida = "";
         for (int i = 0; i < n.key.length; i++) {
-            salida += Integer.toString(n.key[i]);
+            if (i < n.key.length - 1) {
+                salida += n.key[i] + ",";
+            } else {
+                salida += n.key[i];
+            }
+        }
+        g.drawString(salida, r.x + 3, r.y + yoffs);
+
+        if (puntox != Integer.MAX_VALUE) 
+            
+        g.drawLine(puntox, puntoy, (int) (r.x + r.width / 2), r.y);
+
+        dibujarArbol(g, n.c[0], (int) (r.x + r.width / 2), r.y + r.height, yoffs);
+        dibujarArbol(g, n.c[n.c.length-1], (int) (r.x + r.width / 2), r.y + r.height, yoffs);
+    }
+    
+    public void paint(Graphics g) {
+         super.paint(g);
+         fm = g.getFontMetrics();
+
+         if (dirty) 
+         {
+           calcularPosiciones();
+           dirty = false;
+         }
+         
+         Graphics2D g2d = (Graphics2D) g;
+         g2d.translate(getWidth() / 2, parent2child);
+         dibujarArbol(g2d, this.miArbol.root, Integer.MAX_VALUE, Integer.MAX_VALUE, 
+                  fm.getLeading() + fm.getAscent());
+         fm = null;
+   }
+    
+}
