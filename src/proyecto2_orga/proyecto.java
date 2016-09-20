@@ -237,7 +237,7 @@ public class proyecto extends javax.swing.JFrame {
         this.jDesktopPane1.removeAll();
         Rectangle tamaño = this.jInternalFrame2.getBounds();
         this.jInternalFrame2 = null;
-        this.jInternalFrame2 = new JInternalFrame("Representación gráfica", true);
+        this.jInternalFrame2 = new JInternalFrame("Representación gráfica Arbol AVL", true);
         this.jDesktopPane1.add(this.jInternalFrame2, JLayeredPane.DEFAULT_LAYER);
         this.jInternalFrame2.setVisible(true);
         this.jInternalFrame2.setBounds(tamaño);
@@ -260,7 +260,7 @@ public class proyecto extends javax.swing.JFrame {
         }this.jDesktopPane1.removeAll();
         Rectangle tamaño = this.jInternalFrame2.getBounds();
         this.jInternalFrame2 = null;
-        this.jInternalFrame2 = new JInternalFrame("Representación gráfica", true);
+        this.jInternalFrame2 = new JInternalFrame("Representación gráfica Arbol AVL", true);
         this.jDesktopPane1.add(this.jInternalFrame2, JLayeredPane.DEFAULT_LAYER);
         this.jInternalFrame2.setVisible(true);
         this.jInternalFrame2.setBounds(tamaño);
@@ -301,7 +301,7 @@ public class proyecto extends javax.swing.JFrame {
         this.jDesktopPane2.removeAll();
         Rectangle tamaño = this.jInternalFrame3.getBounds();
         this.jInternalFrame3 = null;
-        this.jInternalFrame3 = new JInternalFrame("Representación gráfica", true);
+        this.jInternalFrame3 = new JInternalFrame("Representación gráfica Arbol B", true);
         this.jDesktopPane2.add(this.jInternalFrame3, JLayeredPane.DEFAULT_LAYER);
         this.jInternalFrame3.setVisible(true);
         this.jInternalFrame3.setBounds(tamaño);

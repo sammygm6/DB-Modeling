@@ -7,6 +7,7 @@ public class BTreeNode {
     boolean isLeaf;
     public int n;
     private int T; //Each node has at least T-1 and at most 2T-1 keys
+    public int height = 23;
 
     public BTreeNode(int t) {
         T = t;
@@ -21,11 +22,6 @@ public class BTreeNode {
     }
 
     public void insert(int newKey) {
-        // Instert new key to current node
-        // We make sure that the current node is not full by checking and
-        // splitting if necessary before descending to node
-
-        //System.out.println("inserting " + newKey); // Debugging code
         int i = n - 1;
         if (isLeaf) {
             while ((i >= 0) && (newKey < key[i])) {
@@ -38,15 +34,8 @@ public class BTreeNode {
             while ((i >= 0) && (newKey < key[i])) {
                 i--;
             }
-            int insertChild = i + 1;  // Subtree where new key must be inserted
+            int insertChild = i + 1;
             if (c[insertChild].isFull()) {
-                // The root of the subtree where new key will be inserted has to be split
-                // We promote the mediand of that root to the current node and
-                // update keys and references accordingly
-
-                //System.out.println("This is the full node we're going to break ");// Debugging code
-                //c[insertChild].printNodes();
-                //System.out.println("going to promote " + c[insertChild].key[T-1]);
                 n++;
                 c[n] = c[n - 1];
                 for (int j = n - 1; j > insertChild; j--) {
@@ -66,12 +55,6 @@ public class BTreeNode {
                 newNode.n = T - 1;
                 newNode.isLeaf = c[insertChild].isLeaf;
                 c[insertChild + 1] = newNode;
-
-                //System.out.println("This is the left side ");
-                //c[insertChild].printNodes();	
-                //System.out.println("This is the right side ");
-                //c[insertChild+1].printNodes();
-                //c[insertChild+1].printNodes();
                 if (newKey < key[insertChild]) {
                     c[insertChild].insert(newKey);
                 } else {
@@ -100,9 +83,6 @@ public class BTreeNode {
     }
 
     public void printNodes() {
-        //Prints all keys in the tree, node by node, using preorder
-        //It also prints the indicator of whether a node is a leaf
-        //Used mostly for debugging purposes
         for (int i = 0; i < n; i++) {
             System.out.print(key[i] + " ");
         }

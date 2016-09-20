@@ -10,8 +10,8 @@ package proyecto2_orga;
  */
 public class Node {
 
-    int key, height;
-    Node left, right;
+    public int key, height;
+    public Node left, right;
 
     Node(int d) {
         key = d;

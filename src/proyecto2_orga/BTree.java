@@ -8,7 +8,7 @@ package proyecto2_orga;
 public class BTree {
 
     public BTreeNode root;
-    private int T; //2T es el numero maximo de hijos que un nodo puede tener
+    private int T; 
     private int height;
     private boolean isEmpty = false;
 
@@ -32,7 +32,7 @@ public class BTree {
     }
     
     public void insert(int newKey) {
-        if (root.isFull()) {//Split root;
+        if (root.isFull()) {
             split();
             height++;
         }
@@ -40,24 +40,14 @@ public class BTree {
     }
 
     public void print() {
-        // Wrapper for node print method
         root.print();
     }
 
     public void printNodes() {
-        // Wrapper for node print method
         root.printNodes();
     }
 
     public void split() {
-        // Splits the root into three nodes.
-        // The median element becomes the only element in the root
-        // The left subtree contains the elements that are less than the median
-        // The right subtree contains the elements that are larger than the median
-        // The height of the tree is increased by one
-
-        //System.out.println("Before splitting root");
-        //root.printNodes(); // Code used for debugging
         BTreeNode leftChild = new BTreeNode(T);
         BTreeNode rightChild = new BTreeNode(T);
         leftChild.isLeaf = root.isLeaf;
@@ -80,7 +70,5 @@ public class BTree {
         root.c[0] = leftChild;
         root.c[1] = rightChild;
         root.isLeaf = false;
-        //System.out.println("After splitting root");
-        //root.printNodes();
     }
 }
