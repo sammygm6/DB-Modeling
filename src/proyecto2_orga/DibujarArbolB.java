@@ -54,17 +54,16 @@ public class DibujarArbolB extends JPanel {
             return new Dimension(0, 0);
         }
         if (n.isLeaf) {
-            for (int i = 0; i < n.n; i++) {
+            for (int i = 0; i < n.c.length; i++) {
                 if (i == 0) {
                     ld = calcularTamañoSubarbol(n.c[i]);
                 }
-                if (i == n.n - 1) {
+                if (i == n.c.length - 1) {
                     rd = calcularTamañoSubarbol(n.c[i]);
                 }
             }
         } else {
-            for (int i = 0; i < n.n; i++) {
-                //c[i].print();
+            for (int i = 0; i < n.c.length; i++) {
                 if (i == 0) {
                     ld = calcularTamañoSubarbol(n.c[i]);
                 }
@@ -86,19 +85,20 @@ public class DibujarArbolB extends JPanel {
     private void calcularPosicion(BTreeNode n, int left, int right, int top) {
         Dimension ld = null;
         Dimension rd = null;
-        
+        if (n == null) {
+            return;
+        }
         if (n.isLeaf) {
-            for (int i = 0; i < n.n; i++) {
+            for (int i = 0; i < n.c.length; i++) {
                 if (i == 0) {
                     ld = empty;
                 }
-                if (i == n.n - 1) {
+                if (i == n.c.length - 1) {
                     rd = empty;
                 }
             }
-            System.out.println();
         } else {
-            for (int i = 0; i < n.n; i++) {
+            for (int i = 0; i < n.c.length; i++) {
                 //c[i].print();
                 if (i == 0) {
                     ld = calcularTamañoSubarbol(n.c[i]);
@@ -122,7 +122,7 @@ public class DibujarArbolB extends JPanel {
         posicionNodos.put(n, new Rectangle(center - width / 2 - 3, top, width + 6, fm.getHeight()));
 
         if (n.isLeaf) {
-            for (int i = 0; i < n.n; i++) {
+            for (int i = 0; i < n.c.length; i++) {
                 if (i == 0) {
                     calcularPosicion(n.c[i], Integer.MAX_VALUE, center - child2child / 2, top + fm.getHeight() + parent2child);
                 }
@@ -131,7 +131,7 @@ public class DibujarArbolB extends JPanel {
                 }
             }
         } else {
-            for (int i = 0; i < n.n; i++) {
+            for (int i = 0; i < n.c.length; i++) {
                 //c[i].print();
                 if (i == 0) {
                     ld = calcularTamañoSubarbol(n.c[i]);
@@ -155,8 +155,8 @@ public class DibujarArbolB extends JPanel {
      //g.drawString(Integer.toString(n.key), r.x + 3, r.y + yoffs);
      int space = 0;
         for (int i = 0; i < n.n; i++) {
-            g.drawString(Integer.toString(n.key[i]), r.x + 3 + space, r.y + yoffs);
-            space++;
+            g.drawString(Integer.toString(n.key[i]), r.x + 3 /*+ space*/, r.y + yoffs);
+            //space++;
         }
    
      if (puntox != Integer.MAX_VALUE)
@@ -164,7 +164,7 @@ public class DibujarArbolB extends JPanel {
      g.drawLine(puntox, puntoy, (int)(r.x + r.width/2), r.y);
      
      if (n.isLeaf) {
-            for (int i = 0; i < n.n; i++) {
+            for (int i = 0; i < n.c.length; i++) {
                 if (i == 0) {
                     dibujarArbol(g, n.c[i], (int)(r.x + r.width/2), r.y + r.height, yoffs);
                 }
@@ -173,8 +173,7 @@ public class DibujarArbolB extends JPanel {
                 }
             }
         } else {
-            for (int i = 0; i < n.n; i++) {
-                //c[i].print();
+            for (int i = 0; i < n.c.length; i++) {
                 if (i == 0) {
                     dibujarArbol(g, n.c[i], (int)(r.x + r.width/2), r.y + r.height, yoffs);
                 }
